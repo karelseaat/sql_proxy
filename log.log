@@ -1,0 +1,291 @@
+======================================================================
+SQL Proxy - MySQL Protocol Server (SQLite Backend)
+======================================================================
+
+📊 Configuration:
+   MySQL Port: 3307
+   Backend: SQLite (app_db.sqlite)
+
+📋 Database Schema:
+   Database: app_db
+   Table: users
+   Table: projects
+
+🚀 Starting services...
+   ✓ MySQL protocol listening on port 3307
+
+   Connect via MySQL:
+     mysql -h localhost -P 3307 -u root
+======================================================================
+
+✓ MySQL protocol listener on port 3307
+[MySQL] Client connected from ('127.0.0.1', 55976)
+[DEBUG] Sending HandshakeV10 packet...
+[DEBUG] Handshake sent. Salt: 213235345f302a3b1c3d2e1f5a7b4c3d5e2f6000
+[DEBUG] Waiting for auth packet...
+[DEBUG] Received auth response. Length: 60
+[DEBUG] Sent OK packet after auth.
+[DEBUG] Entering command loop...
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] SET character_set_results = NULL
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] SET autocommit=1
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] SET sql_mode='NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES'
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Main */ SET autocommit=1
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Main */ use app_db
+[MySQL] Client connected from ('127.0.0.1', 55977)
+[DEBUG] Sending HandshakeV10 packet...
+[DEBUG] Handshake sent. Salt: 213235345f302a3b1c3d2e1f5a7b4c3d5e2f6000
+[DEBUG] Waiting for auth packet...
+[DEBUG] Received auth response. Length: 60
+[DEBUG] Sent OK packet after auth.
+[DEBUG] Entering command loop...
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@query_cache_size AS query_cache_size, @@query_cache_type AS query_cache_type, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@tx_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] SET character_set_results = NULL
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] SET autocommit=1
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] SET sql_mode='NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES'
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SET autocommit=1
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ use app_db
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Main */ SELECT x.* FROM app_db.projects x
+LIMIT 0, 200
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT * FROM information_schema.STATISTICS WHERE TABLE_SCHEMA='app_db' AND TABLE_NAME='projects' ORDER BY TABLE_NAME,INDEX_NAME,SEQ_IN_INDEX
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW CREATE TABLE `app_db`.`projects`
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT cc.CONSTRAINT_NAME, cc.CHECK_CLAUSE, tc.TABLE_NAME
+FROM (SELECT CONSTRAINT_NAME, CHECK_CLAUSE
+FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS
+WHERE CONSTRAINT_SCHEMA = 'app_db'
+ORDER BY CONSTRAINT_NAME) cc,
+(SELECT TABLE_NAME, CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_SCHEMA = 'app_db') tc
+WHERE cc.CONSTRAINT_NAME = tc.CONSTRAINT_NAME
+ORDER BY cc.CONSTRAINT_NAME
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW CREATE TABLE `app_db`.`users`
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW CREATE TABLE `app_db`.`sqlite_sequence`
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT * FROM information_schema.STATISTICS WHERE TABLE_SCHEMA='app_db' AND TABLE_NAME='sqlite_sequence' ORDER BY TABLE_NAME,INDEX_NAME,SEQ_IN_INDEX
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW CREATE TABLE `app_db`.`tasks`
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW CREATE TABLE `app_db`.`comments`
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW CREATE TABLE `app_db`.`tags`
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW CREATE TABLE `app_db`.`task_tags`
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT * FROM information_schema.STATISTICS WHERE TABLE_SCHEMA='app_db' AND TABLE_NAME='task_tags' ORDER BY TABLE_NAME,INDEX_NAME,SEQ_IN_INDEX
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW ENGINES
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW CHARSET
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW COLLATION
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT @@GLOBAL.character_set_server,@@GLOBAL.collation_server
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW PLUGINS
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW VARIABLES LIKE 'lower_case_table_names'
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ show databases
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT * FROM information_schema.TABLES t
+WHERE
+	t.TABLE_SCHEMA = 'information_schema'
+	AND t.TABLE_NAME = 'CHECK_CONSTRAINTS'
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW FULL TABLES FROM app_db
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='app_db' ORDER BY ORDINAL_POSITION
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT kc.CONSTRAINT_NAME,kc.TABLE_NAME,kc.COLUMN_NAME,kc.ORDINAL_POSITION
+FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE kc WHERE kc.TABLE_SCHEMA='app_db' AND kc.REFERENCED_TABLE_NAME IS NULL
+ORDER BY kc.CONSTRAINT_NAME,kc.ORDINAL_POSITION
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT * FROM information_schema.SCHEMATA WHERE SCHEMA_NAME='app_db'
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Main */ SELECT SUM((DATA_LENGTH+INDEX_LENGTH))
+FROM INFORMATION_SCHEMA.TABLES 
+WHERE TABLE_SCHEMA='app_db'
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW TABLE STATUS FROM app_db
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Main */ SELECT x.* FROM app_db.projects x
+LIMIT 0, 200
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT * FROM information_schema.STATISTICS WHERE TABLE_SCHEMA='app_db' AND TABLE_NAME='projects' ORDER BY TABLE_NAME,INDEX_NAME,SEQ_IN_INDEX
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT cc.CONSTRAINT_NAME, cc.CHECK_CLAUSE, tc.TABLE_NAME
+FROM (SELECT CONSTRAINT_NAME, CHECK_CLAUSE
+FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS
+WHERE CONSTRAINT_SCHEMA = 'app_db'
+ORDER BY CONSTRAINT_NAME) cc,
+(SELECT TABLE_NAME, CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_SCHEMA = 'app_db' AND TABLE_NAME='projects') tc
+WHERE cc.CONSTRAINT_NAME = tc.CONSTRAINT_NAME
+ORDER BY cc.CONSTRAINT_NAME
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW CREATE TABLE `app_db`.`projects`
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT cc.CONSTRAINT_NAME, cc.CHECK_CLAUSE, tc.TABLE_NAME
+FROM (SELECT CONSTRAINT_NAME, CHECK_CLAUSE
+FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS
+WHERE CONSTRAINT_SCHEMA = 'app_db'
+ORDER BY CONSTRAINT_NAME) cc,
+(SELECT TABLE_NAME, CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_SCHEMA = 'app_db' AND TABLE_NAME='users') tc
+WHERE cc.CONSTRAINT_NAME = tc.CONSTRAINT_NAME
+ORDER BY cc.CONSTRAINT_NAME
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Main */ SELECT x.* FROM app_db.tasks x
+LIMIT 0, 200
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT * FROM information_schema.STATISTICS WHERE TABLE_SCHEMA='app_db' AND TABLE_NAME='tasks' ORDER BY TABLE_NAME,INDEX_NAME,SEQ_IN_INDEX
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT cc.CONSTRAINT_NAME, cc.CHECK_CLAUSE, tc.TABLE_NAME
+FROM (SELECT CONSTRAINT_NAME, CHECK_CLAUSE
+FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS
+WHERE CONSTRAINT_SCHEMA = 'app_db'
+ORDER BY CONSTRAINT_NAME) cc,
+(SELECT TABLE_NAME, CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_SCHEMA = 'app_db' AND TABLE_NAME='tasks') tc
+WHERE cc.CONSTRAINT_NAME = tc.CONSTRAINT_NAME
+ORDER BY cc.CONSTRAINT_NAME
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW CREATE TABLE `app_db`.`tasks`
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Main */ SELECT x.* FROM app_db.comments x
+LIMIT 0, 200
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT * FROM information_schema.STATISTICS WHERE TABLE_SCHEMA='app_db' AND TABLE_NAME='comments' ORDER BY TABLE_NAME,INDEX_NAME,SEQ_IN_INDEX
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT cc.CONSTRAINT_NAME, cc.CHECK_CLAUSE, tc.TABLE_NAME
+FROM (SELECT CONSTRAINT_NAME, CHECK_CLAUSE
+FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS
+WHERE CONSTRAINT_SCHEMA = 'app_db'
+ORDER BY CONSTRAINT_NAME) cc,
+(SELECT TABLE_NAME, CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_SCHEMA = 'app_db' AND TABLE_NAME='comments') tc
+WHERE cc.CONSTRAINT_NAME = tc.CONSTRAINT_NAME
+ORDER BY cc.CONSTRAINT_NAME
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW CREATE TABLE `app_db`.`comments`
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Main */ SELECT x.* FROM app_db.task_tags x
+LIMIT 0, 200
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT * FROM information_schema.STATISTICS WHERE TABLE_SCHEMA='app_db' AND TABLE_NAME='task_tags' ORDER BY TABLE_NAME,INDEX_NAME,SEQ_IN_INDEX
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT cc.CONSTRAINT_NAME, cc.CHECK_CLAUSE, tc.TABLE_NAME
+FROM (SELECT CONSTRAINT_NAME, CHECK_CLAUSE
+FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS
+WHERE CONSTRAINT_SCHEMA = 'app_db'
+ORDER BY CONSTRAINT_NAME) cc,
+(SELECT TABLE_NAME, CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_SCHEMA = 'app_db' AND TABLE_NAME='task_tags') tc
+WHERE cc.CONSTRAINT_NAME = tc.CONSTRAINT_NAME
+ORDER BY cc.CONSTRAINT_NAME
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SHOW CREATE TABLE `app_db`.`task_tags`
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] /* ApplicationName=DBeaver 24.3.0 - Metadata */ SELECT cc.CONSTRAINT_NAME, cc.CHECK_CLAUSE, tc.TABLE_NAME
+FROM (SELECT CONSTRAINT_NAME, CHECK_CLAUSE
+FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS
+WHERE CONSTRAINT_SCHEMA = 'app_db'
+ORDER BY CONSTRAINT_NAME) cc,
+(SELECT TABLE_NAME, CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_SCHEMA = 'app_db' AND TABLE_NAME='tags') tc
+WHERE cc.CONSTRAINT_NAME = tc.CONSTRAINT_NAME
+ORDER BY cc.CONSTRAINT_NAME
+[MySQL] Client connected from ('127.0.0.1', 56176)
+[DEBUG] Sending HandshakeV10 packet...
+[DEBUG] Handshake sent. Salt: 213235345f302a3b1c3d2e1f5a7b4c3d5e2f6000
+[DEBUG] Waiting for auth packet...
+[DEBUG] Received auth response. Length: 42
+[DEBUG] Sent OK packet after auth.
+[DEBUG] Entering command loop...
+[DEBUG] Received command: 0x3
+[DEBUG] Command: QUERY
+[MySQL Query] SELECT name, price FROM products LIMIT 1
+[SQLite Error] no such table: products
+[DEBUG] Connection closed by client (empty packet).
+[MySQL] Client disconnected from ('127.0.0.1', 56176)

@@ -1,0 +1,238 @@
+{
+  "database": "app_db",
+  "tables": [
+    {
+      "name": "users",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "primary_key": true,
+          "autoincrement": true
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR(255)",
+          "nullable": false,
+          "unique": true
+        },
+        {
+          "name": "email",
+          "type": "VARCHAR(255)",
+          "nullable": false,
+          "unique": true
+        },
+        {
+          "name": "role",
+          "type": "VARCHAR(50)",
+          "nullable": false,
+          "default": "'user'"
+        },
+        {
+          "name": "is_active",
+          "type": "BOOLEAN",
+          "default": true
+        },
+        {
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "default": "CURRENT_TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "projects",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "primary_key": true,
+          "autoincrement": true
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR(255)",
+          "nullable": false
+        },
+        {
+          "name": "owner_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "foreign_key": {
+            "table": "users",
+            "column": "id"
+          }
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "nullable": true
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR(50)",
+          "default": "'active'"
+        },
+        {
+          "name": "start_date",
+          "type": "DATE",
+          "nullable": true
+        },
+        {
+          "name": "end_date",
+          "type": "DATE",
+          "nullable": true
+        },
+        {
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "default": "CURRENT_TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "tasks",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "primary_key": true,
+          "autoincrement": true
+        },
+        {
+          "name": "title",
+          "type": "VARCHAR(255)",
+          "nullable": false
+        },
+        {
+          "name": "project_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "foreign_key": {
+            "table": "projects",
+            "column": "id"
+          }
+        },
+        {
+          "name": "assignee_id",
+          "type": "INTEGER",
+          "nullable": true,
+          "foreign_key": {
+            "table": "users",
+            "column": "id"
+          }
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR(50)",
+          "nullable": false,
+          "default": "'pending'"
+        },
+        {
+          "name": "priority",
+          "type": "VARCHAR(20)",
+          "default": "'medium'"
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "nullable": true
+        },
+        {
+          "name": "due_date",
+          "type": "DATETIME",
+          "nullable": true
+        },
+        {
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "default": "CURRENT_TIMESTAMP"
+        },
+        {
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "default": "CURRENT_TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "comments",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "primary_key": true,
+          "autoincrement": true
+        },
+        {
+          "name": "task_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "foreign_key": {
+            "table": "tasks",
+            "column": "id"
+          }
+        },
+        {
+          "name": "user_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "foreign_key": {
+            "table": "users",
+            "column": "id"
+          }
+        },
+        {
+          "name": "content",
+          "type": "TEXT",
+          "nullable": false
+        },
+        {
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "default": "CURRENT_TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "tags",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "primary_key": true,
+          "autoincrement": true
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR(50)",
+          "nullable": false,
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "task_tags",
+      "columns": [
+        {
+          "name": "task_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "foreign_key": {
+            "table": "tasks",
+            "column": "id"
+          }
+        },
+        {
+          "name": "tag_id",
+          "type": "INTEGER",
+          "nullable": false,
+          "foreign_key": {
+            "table": "tags",
+            "column": "id"
+          }
+        }
+      ]
+    }
+  ]
+}
